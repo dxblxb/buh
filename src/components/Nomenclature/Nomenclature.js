@@ -12,17 +12,17 @@ const Nomenclature = () => {
     queryFn: () =>
       getData({
         nomenclature: "all",
-        cats: filterCat
+        cats: filterCat,
       }),
-    queryKey: ["nomenclature", filterCat]
+    queryKey: ["nomenclature", filterCat],
   });
 
   const cat = useQuery({
     queryFn: () =>
       getData({
-        cat: "all"
+        cat: "all",
       }),
-    queryKey: ["cat"]
+    queryKey: ["cat"],
   });
   const onClickHandler = (id) => {
     setactiveRow(id);
@@ -32,7 +32,6 @@ const Nomenclature = () => {
     e.preventDefault();
     console.log("Context menu open");
   };
-  // const currentElements = cat.data.data.filter((elem) => { return elem.parentId == 0 })
   return (
     <div className={css.nomeclatuer}>
       Номенкалатура
@@ -62,7 +61,7 @@ const Nomenclature = () => {
                     onClick={() => onClickHandler(row.id)}
                     className={[
                       css.table__row,
-                      activeRow === row.id ? css.active : ""
+                      activeRow === row.id ? css.active : "",
                     ].join(" ")}
                     onContextMenu={(e) => {
                       onContextMenuHandler(e, row.id);
