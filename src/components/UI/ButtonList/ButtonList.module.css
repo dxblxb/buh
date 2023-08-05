@@ -1,0 +1,27 @@
+.dropdown {
+    position: relative;
+    /* display: inline-block; */
+    top: 110%;
+    right: 103%;
+    
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+    min-width: max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    background-color: white;
+    
+}
+.dropdown__content div {
+    color: black;
+    padding: 3px 20px;
+    display: block;
+  }
+  .dropdown__content div:hover {
+    background-color: var(--color-main);
+}
+.active {display: block;}
+

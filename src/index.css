@@ -1,0 +1,10 @@
+:root {
+  --color-main: #fbed9e;
+  --color-topnav: #f2f2f2;
+  --color-content: #ffffff;
+}
+body{
+  padding: 0;
+  margin: 0;
+  background-color:var(--color-topnav);
+}

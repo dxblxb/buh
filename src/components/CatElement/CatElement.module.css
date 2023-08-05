@@ -1,0 +1,15 @@
+.ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.li {
+  display: table;
+  padding-left: 0px;
+}
+.element {
+  cursor: pointer;
+  /* background-color: aqua; */
+}
+.wrapper {
+  display: flex;
+}
