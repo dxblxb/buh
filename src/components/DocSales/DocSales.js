@@ -2,6 +2,7 @@ import { useState } from "react";
 import ModalNomenclature from "../ModalNomenclature/ModalNomenclature";
 import ButtunSelect from "../UI/ButtonSelect/ButtonSelect";
 import css from "./DocSales.module.css";
+import ModalFrame from "../UI/ModalFrame/ModalFrame";
 
 const DocSales = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -30,7 +31,11 @@ const DocSales = () => {
         </div>
         <div className="table__body"></div>
       </div>
-      {openModal && <ModalNomenclature />}
+      {openModal && (
+        <ModalFrame close={() => setOpenModal(false)}>
+          <ModalNomenclature />
+        </ModalFrame>
+      )}
     </div>
   );
 };
