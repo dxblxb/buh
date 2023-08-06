@@ -13,7 +13,7 @@
   width: 100%;
 }
 .tree {
-  min-width: 400px;
+  min-width: 200px;
 }
 .table__header {
   display: flex;
