@@ -3,6 +3,7 @@
     /* display: inline-block; */
   /* top: 110%;
     right: 103%; */
+  background-color: var(--color-content);
 }
 .content {
 }
@@ -10,6 +11,8 @@
   display: flex;
 }
 .table {
+  max-height: 80dvh;
+  overflow-y: scroll;
   width: 100%;
 }
 .tree {
