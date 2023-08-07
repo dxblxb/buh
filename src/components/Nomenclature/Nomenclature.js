@@ -4,8 +4,14 @@ import { useQuery } from "react-query";
 import { getData } from "../../services/getData";
 import CatElement from "../CatElement/CatElement";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  addOpenFrameAction,
+  setActiveFrameAction,
+} from "../../store/openFrameReducer";
 const Nomenclature = () => {
   const [activeRow, setactiveRow] = useState(0);
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
 
   const filterCat = useSelector((state) => state.catFilter.filterCat);
   const { isLoading, error, data } = useQuery({
@@ -13,8 +19,9 @@ const Nomenclature = () => {
       getData({
         nomenclature: "all",
         cats: filterCat,
+        search: search,
       }),
-    queryKey: ["nomenclature", filterCat],
+    queryKey: ["nomenclature", filterCat, search],
   });
 
   const cat = useQuery({
@@ -32,10 +39,25 @@ const Nomenclature = () => {
     e.preventDefault();
     console.log("Context menu open");
   };
+  const onDoubleClickHanler = (row) => {
+    const frame = {
+      name: row.name,
+      id: Date.now(),
+      type: "NOMENCLATUREITEM",
+      nomid: row.id,
+    };
+    dispatch(addOpenFrameAction(frame));
+    dispatch(setActiveFrameAction(frame.id));
+    console.log("Строка: " + row.id);
+  };
+  const serchFunc = () => {};
   return (
     <div className={css.nomeclatuer}>
       Номенкалатура
-      <div>header</div>
+      <div>
+        header
+        <input value={search} onChange={(e) => setSearch(e.target.value)} />
+      </div>
       <div className={css.content}>
         <div className={css.content__wrapper}>
           <div className={css.table}>
@@ -59,6 +81,7 @@ const Nomenclature = () => {
                   <div
                     key={index}
                     onClick={() => onClickHandler(row.id)}
+                    onDoubleClick={() => onDoubleClickHanler(row)}
                     className={[
                       css.table__row,
                       activeRow === row.id ? css.active : "",

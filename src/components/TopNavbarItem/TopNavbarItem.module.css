@@ -1,30 +1,29 @@
-.item{
-    width: min-content;
-    height: 100%;
-    border-right: 1px solid gray;
-    padding: 0 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.item {
+  width: min-content;
+  height: 100%;
+  border-right: 1px solid gray;
+  padding: 0 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .active {
-    background-color: white;
+  background-color: white;
 }
-.content{
-    
+.content {
+  white-space: nowrap;
 }
-.x{
-    width: 7px;
-    margin: 0 5px;
-    
+.x {
+  width: 7px;
+  margin: 0 5px;
 }
-.x__wrapper{
-    height: fit-content;
-    border-radius: 50%;
-    margin: 3px;
-    cursor: pointer;
+.x__wrapper {
+  height: fit-content;
+  border-radius: 50%;
+  margin: 3px;
+  cursor: pointer;
 }
-.x__wrapper:hover{
-    background-color: darkgray;
+.x__wrapper:hover {
+  background-color: darkgray;
 }
